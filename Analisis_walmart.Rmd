@@ -1,8 +1,9 @@
 ---
-title: "Análisis de Ventas de Walmart"
-author: "Daniel Melo"
-date: "2025-08-17"
-output: html_document
+title: "Análisis de Datos de Walmart"
+author: "Tu Nombre"
+output:
+html_document:    
+filename: "index.html"
 ---
 
 ```{r, message=FALSE}
