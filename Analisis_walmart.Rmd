@@ -5,26 +5,39 @@ date: "2025-08-17"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, message=FALSE}
+# Cargamos las librerías necesarias
+library(readr)
+library(dplyr)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r, message=FALSE}
+# Importamos los archivos de datos
+df_train <- read_csv("train.csv")
+df_features <- read_csv("features.csv")
+df_stores <- read_csv("stores.csv")
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+# Unimos los datos en una sola tabla
+df_completo <- left_join(df_train, df_features, by = c("Store", "Date", "IsHoliday"))
+df_final <- left_join(df_completo, df_stores, by = "Store")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+# Creamos una tabla que muestre el tamaño promedio de las tiendas por tipo
+df_final %>%
+  group_by(Type) %>%
+  summarise(Tamaño_Promedio = mean(Size, na.rm = TRUE))
+```
+
+
+```{r}
+# Creamos un gráfico de dispersión para visualizar la relación entre temperatura y ventas
+library(ggplot2)
+
+ggplot(df_final, aes(x = Temperature, y = Weekly_Sales)) +
+  geom_point(alpha = 0.5) +
+  labs(title = "Relación entre Ventas Semanales y Temperatura")
+```
+

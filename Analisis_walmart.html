@@ -360,44 +360,10 @@ display: none;
 <pre class="r"><code># Cargamos las librerías necesarias
 library(readr)
 library(dplyr)</code></pre>
-<pre><code>## 
-## Adjuntando el paquete: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
 <pre class="r"><code># Importamos los archivos de datos
-df_train &lt;- read_csv(&quot;train.csv&quot;)</code></pre>
-<pre><code>## Rows: 421570 Columns: 5
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## dbl  (3): Store, Dept, Weekly_Sales
-## lgl  (1): IsHoliday
-## date (1): Date
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>df_features &lt;- read_csv(&quot;features.csv&quot;)</code></pre>
-<pre><code>## Rows: 8190 Columns: 12
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## dbl  (10): Store, Temperature, Fuel_Price, MarkDown1, MarkDown2, MarkDown3, ...
-## lgl   (1): IsHoliday
-## date  (1): Date
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>df_stores &lt;- read_csv(&quot;stores.csv&quot;)</code></pre>
-<pre><code>## Rows: 45 Columns: 3
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (1): Type
-## dbl (2): Store, Size
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+df_train &lt;- read_csv(&quot;train.csv&quot;)
+df_features &lt;- read_csv(&quot;features.csv&quot;)
+df_stores &lt;- read_csv(&quot;stores.csv&quot;)</code></pre>
 <pre class="r"><code># Unimos los datos en una sola tabla
 df_completo &lt;- left_join(df_train, df_features, by = c(&quot;Store&quot;, &quot;Date&quot;, &quot;IsHoliday&quot;))
 df_final &lt;- left_join(df_completo, df_stores, by = &quot;Store&quot;)</code></pre>
