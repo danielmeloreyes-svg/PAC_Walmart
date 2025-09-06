@@ -1,0 +1,13 @@
+"0","df_final$Total_MarkDown <- df_final$MarkDown1 + df_final$MarkDown2 + 
+                          df_final$MarkDown3 + df_final$MarkDown4 + df_final$MarkDown5
+
+df_final$Season <- case_when(
+  df_final$Month %in% c(12, 1, 2) ~ ""Invierno"",
+  df_final$Month %in% c(3, 4, 5) ~ ""Primavera"", 
+  df_final$Month %in% c(6, 7, 8) ~ ""Verano"",
+  TRUE ~ ""Otoño""
+)
+
+cat(""Variables creadas: Total_MarkDown, Season"")
+"
+"1","Variables creadas: Total_MarkDown, Season"

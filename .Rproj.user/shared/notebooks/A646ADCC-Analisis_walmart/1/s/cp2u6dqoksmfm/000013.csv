@@ -1,0 +1,909 @@
+"1","
+"
+"2","probando la URL 'https://cran.rstudio.com/src/contrib/xfun_0.53.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 168305 bytes (164 KB)
+"
+"2","downloaded 164 KB
+
+"
+"1","* installing *source* package 'xfun' ...
+"
+"1","** this is package 'xfun' version '0.53'
+"
+"1","** package 'xfun' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** libs
+"
+"1","using C compiler: 'gcc (GCC) 11.1.0'
+"
+"1","gcc  -I""C:/PROGRA~1/R/R-45~1.1/include"" -DNDEBUG     -I""c:/rtools45/x86_64-w64-mingw32.static.posix/include""      -O2 -Wall -std=gnu2x  -mfpmath=sse -msse2 -mstackrealign   -c base64.c -o base64.o
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:16: error: expected '{' before ':' token
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                ^
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: warning: data definition has no type or storage class
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:77,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:91:1: error: unknown type name 'Rboolean'
+"
+"1","   91 | Rboolean StringFalse(const char *); // used by iotools
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:92:1: error: unknown type name 'Rboolean'
+"
+"1","   92 | Rboolean StringTrue(const char *); // used by iotools
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:93:1: error: unknown type name 'Rboolean'
+"
+"1","   93 | Rboolean isBlankString(const char *); // used by iotools and openxlsx2
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:114:18: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  114 |                  Rboolean rightmost_closed,  Rboolean all_inside, int ilo,
+"
+"1","      |                  ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:114:46: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  114 |                  Rboolean rightmost_closed,  Rboolean all_inside, int ilo,
+"
+"1","      |                                              ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:117:19: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  117 |                   Rboolean rightmost_closed,  Rboolean all_inside, Rboolean left_open,
+"
+"1","      |                   ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:117:47: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  117 |                   Rboolean rightmost_closed,  Rboolean all_inside, Rboolean left_open,
+"
+"1","      |                                               ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Utils.h:117:68: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  117 |                   Rboolean rightmost_closed,  Rboolean all_inside, Rboolean left_open,
+"
+"1","      |                                                                    ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:50,
+"
+"1","                 from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Rdynload.h:85:1: error: unknown type name 'Rboolean'
+"
+"1","   85 | Rboolean R_useDynamicSymbols(DllInfo *info, Rboolean value);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Rdynload.h:85:45: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","   85 | Rboolean R_useDynamicSymbols(DllInfo *info, Rboolean value);
+"
+"1","      |                                             ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Rdynload.h:86:1: error: unknown type name 'Rboolean'
+"
+"1","   86 | Rboolean R_forceSymbols(DllInfo *info, Rboolean value);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Rdynload.h:86:40: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","   86 | Rboolean R_forceSymbols(DllInfo *info, Rboolean value);
+"
+"1","      |                                        ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:207:1: warning: data definition has no type or storage class
+"
+"1","  207 | Rboolean (Rf_isNull)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:207:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:207:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:207:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:207:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:208:1: warning: data definition has no type or storage class
+"
+"1","  208 | Rboolean (Rf_isSymbol)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:208:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:208:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:208:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:208:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:209:1: warning: data definition has no type or storage class
+"
+"1","  209 | Rboolean (Rf_isLogical)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:209:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:209:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:209:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:209:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:210:1: warning: data definition has no type or storage class
+"
+"1","  210 | Rboolean (Rf_isReal)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:210:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:210:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:210:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:210:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:211:1: warning: data definition has no type or storage class
+"
+"1","  211 | Rboolean (Rf_isComplex)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:211:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:211:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:211:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:211:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:212:1: warning: data definition has no type or storage class
+"
+"1","  212 | Rboolean (Rf_isExpression)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:212:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:212:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:212:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:212:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:213:1: warning: data definition has no type or storage class
+"
+"1","  213 | Rboolean (Rf_isEnvironment)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:213:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:213:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:213:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:213:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:214:1: warning: data definition has no type or storage class
+"
+"1","  214 | Rboolean (Rf_isString)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:214:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:214:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:214:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:214:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:215:1: warning: data definition has no type or storage class
+"
+"1","  215 | Rboolean (Rf_isObject)(SEXP s);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:215:1: warning: type defaults to 'int' in declaration of 'Rboolean' [-Wimplicit-int]
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:215:1: error: 'Rboolean' declared as function returning a function
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:215:1: warning: parameter names (without types) in function declaration
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:215:1: error: 'Rboolean' redeclared as different kind of symbol
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/R.h:70,
+"
+"1","                 from base64.c:2:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/R_ext/Boolean.h:65:41: note: previous declaration of 'Rboolean' with type 'int'
+"
+"1","   65 |   typedef enum :int { FALSE = 0, TRUE } Rboolean;  // so NOT NA
+"
+"1","      |                                         ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:490:1: error: unknown type name 'Rboolean'
+"
+"1","  490 | Rboolean Rf_asRboolean(SEXP x);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:513:36: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  513 | R_xlen_t Rf_any_duplicated(SEXP x, Rboolean from_last); // unique.c
+"
+"1","      |                                    ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:514:50: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  514 | R_xlen_t Rf_any_duplicated3(SEXP x, SEXP incomp, Rboolean from_last); // unique.c
+"
+"1","      |                                                  ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:517:32: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  517 | void Rf_copyMatrix(SEXP, SEXP, Rboolean); // duplicate.c
+"
+"1","      |                                ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:518:36: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  518 | void Rf_copyListMatrix(SEXP, SEXP, Rboolean); // duplicate.c
+"
+"1","      |                                    ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:530:26: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  530 | SEXP Rf_duplicated(SEXP, Rboolean); // duplicate.c
+"
+"1","      |                          ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:535:37: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  535 | SEXP Rf_findVarInFrame3(SEXP, SEXP, Rboolean); // envir.c
+"
+"1","      |                                     ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:536:1: error: unknown type name 'Rboolean'
+"
+"1","  536 | Rboolean R_existsVarInFrame(SEXP, SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:537:27: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  537 | SEXP R_getVar(SEXP, SEXP, Rboolean); // envir.c
+"
+"1","      |                           ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:538:29: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  538 | SEXP R_getVarEx(SEXP, SEXP, Rboolean, SEXP); // envir.c
+"
+"1","      |                             ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:554:1: error: unknown type name 'Rboolean'
+"
+"1","  554 | Rboolean Rf_isOrdered(SEXP); // util.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:555:1: error: unknown type name 'Rboolean'
+"
+"1","  555 | Rboolean Rf_isUnordered(SEXP); // util.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:556:1: error: unknown type name 'Rboolean'
+"
+"1","  556 | Rboolean Rf_isUnsorted(SEXP, Rboolean); // sort.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:556:30: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  556 | Rboolean Rf_isUnsorted(SEXP, Rboolean); // sort.c
+"
+"1","      |                              ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:557:1: error: unknown type name 'Rboolean'
+"
+"1","  557 | Rboolean R_isTRUE(SEXP); // util.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:560:25: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  560 | SEXP R_lsInternal(SEXP, Rboolean); // envir.c
+"
+"1","      |                         ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:561:26: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  561 | SEXP R_lsInternal3(SEXP, Rboolean, Rboolean); // envir.c
+"
+"1","      |                          ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:561:36: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  561 | SEXP R_lsInternal3(SEXP, Rboolean, Rboolean); // envir.c
+"
+"1","      |                                    ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:566:1: error: unknown type name 'Rboolean'
+"
+"1","  566 | Rboolean Rf_NonNullStringMatch(SEXP, SEXP); // match.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:574:13: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  574 |             Rboolean allowNA, Rboolean keepNA, const char* msg_name);
+"
+"1","      |             ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:574:31: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  574 |             Rboolean allowNA, Rboolean keepNA, const char* msg_name);
+"
+"1","      |                               ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:585:1: error: unknown type name 'Rboolean'
+"
+"1","  585 | Rboolean Rf_StringBlank(SEXP); // util.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:611:1: error: unknown type name 'Rboolean'
+"
+"1","  611 | Rboolean Rf_isS4(SEXP); // objects.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:612:20: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  612 | SEXP Rf_asS4(SEXP, Rboolean, int); // objects.c
+"
+"1","      |                    ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:628:1: error: unknown type name 'Rboolean'
+"
+"1","  628 | Rboolean Rf_charIsASCII(SEXP); // sysutils.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:629:1: error: unknown type name 'Rboolean'
+"
+"1","  629 | Rboolean Rf_charIsUTF8(SEXP);  // sysutils.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:630:1: error: unknown type name 'Rboolean'
+"
+"1","  630 | Rboolean Rf_charIsLatin1(SEXP); // sysutils.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:660:46: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  660 | void R_RegisterFinalizerEx(SEXP s, SEXP fun, Rboolean onexit); // memory,c
+"
+"1","      |                                              ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:661:57: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  661 | void R_RegisterCFinalizerEx(SEXP s, R_CFinalizer_t fun, Rboolean onexit);  // memory,c
+"
+"1","      |                                                         ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:665:50: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  665 | SEXP R_MakeWeakRef(SEXP key, SEXP val, SEXP fin, Rboolean onexit);  // memory,c
+"
+"1","      |                                                  ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:666:61: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  666 | SEXP R_MakeWeakRefC(SEXP key, SEXP val, R_CFinalizer_t fin, Rboolean onexit);  // memory,c
+"
+"1","      |                                                             ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:676:1: error: unknown type name 'Rboolean'
+"
+"1","  676 | Rboolean R_ToplevelExec(void (*fun)(void *), void *data); // context.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:690:51: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  690 |                      void (*cleanfun)(void *data, Rboolean jump),
+"
+"1","      |                                                   ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:691:22: error: expected ';', ',' or ')' before 'void'
+"
+"1","  691 |                      void *cleandata, SEXP cont); // context.c
+"
+"1","      |                      ^~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:695:1: error: unknown type name 'Rboolean'
+"
+"1","  695 | Rboolean R_IsPackageEnv(SEXP rho); // envir.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:698:1: error: unknown type name 'Rboolean'
+"
+"1","  698 | Rboolean R_IsNamespaceEnv(SEXP rho); // envir.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:701:34: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  701 | void R_LockEnvironment(SEXP env, Rboolean bindings);
+"
+"1","      |                                  ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:702:1: error: unknown type name 'Rboolean'
+"
+"1","  702 | Rboolean R_EnvironmentIsLocked(SEXP env); // envir.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:706:1: error: unknown type name 'Rboolean'
+"
+"1","  706 | Rboolean R_BindingIsLocked(SEXP sym, SEXP env); // envir.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:707:1: error: unknown type name 'Rboolean'
+"
+"1","  707 | Rboolean R_BindingIsActive(SEXP sym, SEXP env); // envir.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:709:1: error: unknown type name 'Rboolean'
+"
+"1","  709 | Rboolean R_HasFancyBindings(SEXP rho); // envir.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:819:1: error: unknown type name 'Rboolean'
+"
+"1","  819 | Rboolean R_has_methods_attached(void);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:820:1: error: unknown type name 'Rboolean'
+"
+"1","  820 | Rboolean R_isVirtualClass(SEXP class_def, SEXP env);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:821:1: error: unknown type name 'Rboolean'
+"
+"1","  821 | Rboolean R_extends  (SEXP class1, SEXP class2, SEXP env);
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:868:1: error: unknown type name 'Rboolean'
+"
+"1","  868 | Rboolean R_compute_identical(SEXP, SEXP, int); // identical.c
+"
+"1","      | ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:877:53: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  877 | void R_orderVector (int *indx, int n, SEXP arglist, Rboolean nalast, Rboolean decreasing);
+"
+"1","      |                                                     ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:877:70: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  877 | void R_orderVector (int *indx, int n, SEXP arglist, Rboolean nalast, Rboolean decreasing);
+"
+"1","      |                                                                      ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:879:53: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  879 | void R_orderVector1(int *indx, int n, SEXP x,       Rboolean nalast, Rboolean decreasing);
+"
+"1","      |                                                     ^~~~~~~~
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:879:70: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1","  879 | void R_orderVector1(int *indx, int n, SEXP x,       Rboolean nalast, Rboolean decreasing);
+"
+"1","      |                                                                      ^~~~~~~~
+"
+"1","In file included from C:/PROGRA~1/R/R-45~1.1/include/Rdefines.h:41,
+"
+"1","                 from base64.c:3:
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1086:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1086 | Rboolean Rf_conformable(SEXP, SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1088:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1088 | Rboolean Rf_inherits(SEXP, const char *);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1089:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1089 | Rboolean Rf_isArray(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1090:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1090 | Rboolean Rf_isDataFrame(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1091:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1091 | Rboolean Rf_isFactor(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1092:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1092 | Rboolean Rf_isFrame(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1093:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1093 | Rboolean Rf_isFunction(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1094:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1094 | Rboolean Rf_isInteger(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1095:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1095 | Rboolean Rf_isLanguage(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1096:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1096 | Rboolean Rf_isList(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1097:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1097 | Rboolean Rf_isMatrix(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1098:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1098 | Rboolean Rf_isNewList(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1099:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1099 | Rboolean Rf_isNumber(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1100:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1100 | Rboolean Rf_isNumeric(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1101:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1101 | Rboolean Rf_isPairList(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1102:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1102 | Rboolean Rf_isPrimitive(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1103:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1103 | Rboolean Rf_isTs(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1104:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1104 | Rboolean Rf_isUserBinop(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1105:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1105 | Rboolean Rf_isValidString(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1106:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1106 | Rboolean Rf_isValidStringF(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1107:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1107 | Rboolean Rf_isVector(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1108:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1108 | Rboolean Rf_isVectorAtomic(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1109:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1109 | Rboolean Rf_isVectorList(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1110:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1110 | Rboolean Rf_isVectorizable(SEXP);
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1253:1: error: unknown type name 'Rboolean'; did you mean 'asRboolean'?
+"
+"1"," 1253 | Rboolean Rf_psmatch(const char *, const char *, Rboolean); // match.c,  used by rgl and in WRE
+"
+"1","      | ^~~~~~~~
+"
+"1","      | asRboolean
+"
+"1","C:/PROGRA~1/R/R-45~1.1/include/Rinternals.h:1253:49: error: expected declaration specifiers or '...' before 'Rboolean'
+"
+"1"," 1253 | Rboolean Rf_psmatch(const char *, const char *, Rboolean); // match.c,  used by rgl and in WRE
+"
+"1","      |                                                 ^~~~~~~~
+"
+"1","make: *** [C:/PROGRA~1/R/R-45~1.1/etc/x64/Makeconf:289: base64.o] Error 1
+"
+"1","ERROR: compilation failed for package 'xfun'
+"
+"1","* removing 'C:/Users/Alex/AppData/Local/R/win-library/4.5/xfun'
+"
+"1","Warning in "
+"1",""
+"1","install.packages"
+"1",""
+"1"," :
+  "
+"1",""
+"1","installation of package ‘xfun’ had non-zero exit status"
+"1",""
+"1","
+"
+"2","
+"
+"2",""
+"2","The downloaded source packages are in
+	‘C:\Users\Alex\AppData\Local\Temp\RtmpATA97Y\downloaded_packages’"
+"2",""
+"2","
+"

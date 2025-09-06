@@ -1,0 +1,15 @@
+"0","kpis_tipo <- df_final %>%
+  group_by(Type) %>%
+  summarise(
+    Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE),
+    Numero_Tiendas = n_distinct(Store)
+  )
+
+print(kpis_tipo)
+"
+"0",""
+"0","# Gráfico simple"
+"0","ggplot(kpis_tipo, aes(x = Type, y = Ventas_Promedio, fill = Type)) +"
+"0","  geom_bar(stat = ""identity"") +"
+"0","  labs(title = ""Ventas Promedio por Tipo de Tienda"", x = ""Tipo"", y = ""Ventas"") +"
+"0","  theme(legend.position = ""none"")"

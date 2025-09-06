@@ -1,0 +1,7 @@
+"0","library(readr)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+"
+"2","Error en library(lubridate): no hay paquete llamado ‘lubridate’
+"

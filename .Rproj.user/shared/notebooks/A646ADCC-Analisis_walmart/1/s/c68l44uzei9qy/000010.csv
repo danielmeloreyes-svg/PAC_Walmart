@@ -1,0 +1,19 @@
+"0","# Indicadores básicos por tienda
+indicadores_tienda <- df_final %>%
+  group_by(Store) %>%
+  summarise(
+    Ventas_Totales = sum(Weekly_Sales, na.rm = TRUE),
+    Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE),
+    Tipo_Tienda = first(Type)
+  ) %>%
+  arrange(desc(Ventas_Totales))
+
+# Top 5 tiendas
+print(head(indicadores_tienda, 5))
+"
+"0",""
+"0","# Gráfico simple"
+"0","ggplot(indicadores_tienda, aes(x = reorder(Store, Ventas_Totales), y = Ventas_Totales)) +"
+"0","  geom_bar(stat = ""identity"", fill = ""steelblue"") +"
+"0","  labs(title = ""Ventas Totales por Tienda"", x = ""Tienda"", y = ""Ventas"") +"
+"0","  theme(axis.text.x = element_text(angle = 45, hjust = 1))"

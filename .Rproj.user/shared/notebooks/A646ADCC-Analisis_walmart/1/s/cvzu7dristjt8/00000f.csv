@@ -1,0 +1,5 @@
+"0","# Importamos los archivos de datos"
+"0","df_train <- read_csv(""train.csv"")"
+"2","Error en read_csv(""train.csv""): 
+  no se pudo encontrar la función ""read_csv""
+"

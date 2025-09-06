@@ -1,0 +1,12 @@
+"0","estacionalidad <- df_final %>%
+  group_by(Season) %>%
+  summarise(Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE))
+
+print(estacionalidad)
+"
+"0",""
+"0","# Gráfico de estacionalidad"
+"0","ggplot(estacionalidad, aes(x = Season, y = Ventas_Promedio, fill = Season)) +"
+"0","  geom_bar(stat = ""identity"") +"
+"0","  labs(title = ""Ventas Promedio por Estación"", x = ""Estación"", y = ""Ventas"") +"
+"0","  theme(legend.position = ""none"")"

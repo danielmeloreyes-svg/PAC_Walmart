@@ -1,0 +1,42 @@
+---
+title: "Análisis de Datos de Walmart"
+author: "Tu Nombre"
+output:
+html_document:    
+filename: "index1.html"
+---
+
+```{r, message=FALSE}
+# Cargamos las librerías necesarias
+library(readr)
+library(dplyr)
+```
+
+```{r, message=FALSE}
+# Importamos los archivos de datos
+df_train <- read_csv("train.csv")
+df_features <- read_csv("features.csv")
+df_stores <- read_csv("stores.csv")
+```
+
+```{r}
+# Unimos los datos en una sola tabla
+df_completo <- left_join(df_train, df_features, by = c("Store", "Date", "IsHoliday"))
+df_final <- left_join(df_completo, df_stores, by = "Store")
+```
+
+```{r}
+# Creamos una tabla que muestre el tamaño promedio de las tiendas por tipo
+df_final %>%
+  group_by(Type) %>%
+  summarise(Tamaño_Promedio = mean(Size, na.rm = TRUE))
+```
+
+```{r}
+# Creamos un gráfico de dispersión para visualizar la relación entre temperatura y ventas
+library(ggplot2)
+
+ggplot(df_final, aes(x = Temperature, y = Weekly_Sales)) +
+  geom_point(alpha = 0.5) +
+  labs(title = "Relación entre Ventas Semanales y Temperatura")
+```

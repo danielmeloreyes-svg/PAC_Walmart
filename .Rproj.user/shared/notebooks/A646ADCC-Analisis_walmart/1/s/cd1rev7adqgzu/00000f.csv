@@ -1,0 +1,5 @@
+"0","cat(""Datos faltantes después del tratamiento:"", sum(is.na(df_final)))
+"
+"1","Datos faltantes después del tratamiento:"
+"1"," "
+"1","0"

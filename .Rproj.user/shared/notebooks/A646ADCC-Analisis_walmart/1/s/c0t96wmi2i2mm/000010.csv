@@ -1,0 +1,18 @@
+"0","# Comparar ventas con y sin promociones
+promociones <- df_final %>%
+  mutate(Tiene_Promocion = Total_MarkDown > 0) %>%
+  group_by(Tiene_Promocion) %>%
+  summarise(Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE))
+
+print(promociones)
+"
+"0",""
+"0","# Calcular incremento"
+"0","incremento <- (promociones$Ventas_Promedio[2] - promociones$Ventas_Promedio[1]) / "
+"0","              promociones$Ventas_Promedio[1] * 100"
+"0","cat(""Incremento con promociones:"", round(incremento, 1), ""%"")"
+"1","Incremento con promociones:"
+"1"," "
+"1","1.9"
+"1"," "
+"1","%"

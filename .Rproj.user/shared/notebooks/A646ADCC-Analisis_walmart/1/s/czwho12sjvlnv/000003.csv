@@ -1,0 +1,12 @@
+"0","boxplot(df_final$Weekly_Sales, main=""Outliers en Ventas Semanales"")
+
+# Contar outliers usando IQR
+Q1 <- quantile(df_final$Weekly_Sales, 0.25, na.rm = TRUE)
+Q3 <- quantile(df_final$Weekly_Sales, 0.75, na.rm = TRUE)
+IQR <- Q3 - Q1
+outliers <- sum(df_final$Weekly_Sales < (Q1 - 1.5*IQR) | df_final$Weekly_Sales > (Q3 + 1.5*IQR))
+cat(""Número de outliers:"", outliers)
+"
+"1","Número de outliers:"
+"1"," "
+"1","35521"
