@@ -1,72 +1,64 @@
 ---
-title: "Análisis de Datos de Walmart"
-author: "Tu Nombre"
+title: "Análisis de Datos de Walmart Maestria en Ciencia de datos Universidad Continental"
+author: "Grupo 4 - Sharon Margoth Ojeda Collazos  - Daniel Melo Reyes - Alexander Yucasi Quispe"
 output:
-html_document:    
-filename: "index.html"
+  html_document:    
+    filename: "index.html"
 ---
 
-```{r, message=FALSE}
-# Cargamos las librerías necesarias
+# Análisis de Ventas de Walmart
+
+Este trabajo analiza los datos de ventas de Walmart para identificar factores que influyen en el rendimiento de las tiendas.
+
+**Objetivos:**
+- Identificar variables importantes para las ventas
+- Analizar el impacto de promociones
+- Evaluar diferencias por tipo de tienda
+- Examinar patrones estacionales
+
+**Datos utilizados:**
+- train.csv: ventas semanales por tienda
+- features.csv: variables externas (temperatura, promociones, etc.)
+- stores.csv: información de tiendas
+
+```{r}
 library(readr)
 library(dplyr)
 library(ggplot2)
 ```
 
-```{r, message=FALSE}
-# Importamos los archivos de datos
+```{r}
 df_train <- read_csv("train.csv")
 df_features <- read_csv("features.csv")
 df_stores <- read_csv("stores.csv")
 ```
 
 ```{r}
-# Unimos los datos en una sola tabla
 df_completo <- left_join(df_train, df_features, by = c("Store", "Date", "IsHoliday"))
 df_final <- left_join(df_completo, df_stores, by = "Store")
 
-# Convertimos la columna Date a formato fecha
 df_final$Date <- as.Date(df_final$Date)
-
-# Agregamos variables temporales usando funciones básicas de R
 df_final$Year <- as.numeric(format(df_final$Date, "%Y"))
 df_final$Month <- as.numeric(format(df_final$Date, "%m"))
 ```
 
-## 1. PREPROCESAMIENTO DE DATOS
-
-### 1.1 Limpieza de datos faltantes
+## 1. Preparación de datos
 
 ```{r}
-# Reemplazar NA en MarkDowns con 0 (no hay promoción)
 df_final$MarkDown1[is.na(df_final$MarkDown1)] <- 0
 df_final$MarkDown2[is.na(df_final$MarkDown2)] <- 0
 df_final$MarkDown3[is.na(df_final$MarkDown3)] <- 0
 df_final$MarkDown4[is.na(df_final$MarkDown4)] <- 0
 df_final$MarkDown5[is.na(df_final$MarkDown5)] <- 0
 
-# Verificar datos faltantes
-cat("Datos faltantes después del tratamiento:", sum(is.na(df_final)))
+sum(is.na(df_final))
 ```
 
-### 1.2 Detección de outliers
-
 ```{r}
-# Detección simple de outliers con boxplot
-boxplot(df_final$Weekly_Sales, main="Outliers en Ventas Semanales")
-
-# Contar outliers usando IQR
-Q1 <- quantile(df_final$Weekly_Sales, 0.25, na.rm = TRUE)
-Q3 <- quantile(df_final$Weekly_Sales, 0.75, na.rm = TRUE)
-IQR <- Q3 - Q1
-outliers <- sum(df_final$Weekly_Sales < (Q1 - 1.5*IQR) | df_final$Weekly_Sales > (Q3 + 1.5*IQR))
-cat("Número de outliers:", outliers)
+boxplot(df_final$Weekly_Sales, main="Ventas Semanales")
 ```
 
-### 1.3 Transformación de variables
-
 ```{r}
-# Crear variables útiles
 df_final$Total_MarkDown <- df_final$MarkDown1 + df_final$MarkDown2 + 
                           df_final$MarkDown3 + df_final$MarkDown4 + df_final$MarkDown5
 
@@ -76,16 +68,11 @@ df_final$Season <- case_when(
   df_final$Month %in% c(6, 7, 8) ~ "Verano",
   TRUE ~ "Otoño"
 )
-
-cat("Variables creadas: Total_MarkDown, Season")
 ```
 
-## 2. CONSTRUCCIÓN DE INDICADORES
-
-### 2.1 Indicadores de rendimiento por tienda
+## 2. Análisis por tienda
 
 ```{r}
-# Indicadores básicos por tienda
 indicadores_tienda <- df_final %>%
   group_by(Store) %>%
   summarise(
@@ -95,54 +82,45 @@ indicadores_tienda <- df_final %>%
   ) %>%
   arrange(desc(Ventas_Totales))
 
-# Top 5 tiendas
-print(head(indicadores_tienda, 5))
+head(indicadores_tienda, 5)
+```
 
-# Gráfico simple
+```{r}
 ggplot(indicadores_tienda, aes(x = reorder(Store, Ventas_Totales), y = Ventas_Totales)) +
   geom_bar(stat = "identity", fill = "steelblue") +
-  labs(title = "Ventas Totales por Tienda", x = "Tienda", y = "Ventas") +
+  labs(title = "Ventas por Tienda", x = "Tienda", y = "Ventas") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-### 2.2 Métricas de estacionalidad
-
 ```{r}
-# Ventas por estación
 estacionalidad <- df_final %>%
   group_by(Season) %>%
   summarise(Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE))
 
-print(estacionalidad)
+estacionalidad
+```
 
-# Gráfico de estacionalidad
+```{r}
 ggplot(estacionalidad, aes(x = Season, y = Ventas_Promedio, fill = Season)) +
   geom_bar(stat = "identity") +
-  labs(title = "Ventas Promedio por Estación", x = "Estación", y = "Ventas") +
+  labs(title = "Ventas por Estación", x = "Estación", y = "Ventas") +
   theme(legend.position = "none")
 ```
 
-### 2.3 Indicadores de impacto de promociones
-
 ```{r}
-# Comparar ventas con y sin promociones
 promociones <- df_final %>%
   mutate(Tiene_Promocion = Total_MarkDown > 0) %>%
   group_by(Tiene_Promocion) %>%
   summarise(Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE))
 
-print(promociones)
+promociones
 
-# Calcular incremento
 incremento <- (promociones$Ventas_Promedio[2] - promociones$Ventas_Promedio[1]) / 
               promociones$Ventas_Promedio[1] * 100
-cat("Incremento con promociones:", round(incremento, 1), "%")
+incremento
 ```
 
-### 2.4 KPIs por tipo de tienda
-
 ```{r}
-# KPIs básicos por tipo
 kpis_tipo <- df_final %>%
   group_by(Type) %>%
   summarise(
@@ -150,12 +128,188 @@ kpis_tipo <- df_final %>%
     Numero_Tiendas = n_distinct(Store)
   )
 
-print(kpis_tipo)
+kpis_tipo
+```
 
-# Gráfico simple
+```{r}
 ggplot(kpis_tipo, aes(x = Type, y = Ventas_Promedio, fill = Type)) +
   geom_bar(stat = "identity") +
-  labs(title = "Ventas Promedio por Tipo de Tienda", x = "Tipo", y = "Ventas") +
+  labs(title = "Ventas por Tipo de Tienda", x = "Tipo", y = "Ventas") +
   theme(legend.position = "none")
 ```
 
+## 3. Estadísticas descriptivas
+
+```{r}
+summary(df_final$Weekly_Sales)
+summary(df_final$Temperature)
+summary(df_final$Fuel_Price)
+```
+
+```{r}
+hist(df_final$Weekly_Sales, main = "Ventas Semanales", xlab = "Ventas", col = "lightblue")
+```
+
+```{r}
+hist(df_final$Temperature, main = "Temperatura", xlab = "Temperatura", col = "lightgreen")
+```
+
+```{r}
+ventas_stats <- data.frame(
+  Media = mean(df_final$Weekly_Sales, na.rm = TRUE),
+  Mediana = median(df_final$Weekly_Sales, na.rm = TRUE),
+  Desviacion = sd(df_final$Weekly_Sales, na.rm = TRUE),
+  Minimo = min(df_final$Weekly_Sales, na.rm = TRUE),
+  Maximo = max(df_final$Weekly_Sales, na.rm = TRUE)
+)
+ventas_stats
+```
+
+```{r}
+variables_numericas <- df_final[, c("Weekly_Sales", "Temperature", "Fuel_Price", "CPI", "Unemployment", "Total_MarkDown")]
+correlaciones <- cor(variables_numericas, use = "complete.obs")
+round(correlaciones, 3)
+```
+
+## 4. Pruebas estadísticas
+
+```{r}
+ventas_festivos <- df_final$Weekly_Sales[df_final$IsHoliday == TRUE]
+ventas_normales <- df_final$Weekly_Sales[df_final$IsHoliday == FALSE]
+
+t.test(ventas_festivos, ventas_normales)
+```
+
+```{r}
+anova_result <- aov(Weekly_Sales ~ Type, data = df_final)
+summary(anova_result)
+```
+
+```{r}
+cor.test(df_final$Weekly_Sales, df_final$Temperature)
+```
+
+## 5. Gráficos
+
+```{r}
+plot(df_final$Temperature, df_final$Weekly_Sales,
+     main = "Temperatura vs Ventas",
+     xlab = "Temperatura",
+     ylab = "Ventas",
+     pch = 16,
+     col = "blue")
+
+abline(lm(Weekly_Sales ~ Temperature, data = df_final), col = "red", lwd = 2)
+```
+
+```{r}
+boxplot(Weekly_Sales ~ Season, data = df_final,
+        main = "Ventas por Estación",
+        xlab = "Estación",
+        ylab = "Ventas",
+        col = c("lightblue", "lightgreen", "lightyellow", "lightcoral"))
+```
+
+```{r}
+ventas_mensuales <- df_final %>%
+  group_by(Year, Month) %>%
+  summarise(Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE))
+
+ventas_mensuales$Fecha <- as.Date(paste(ventas_mensuales$Year, ventas_mensuales$Month, "01", sep = "-"))
+
+plot(ventas_mensuales$Fecha, ventas_mensuales$Ventas_Promedio,
+     type = "l",
+     main = "Evolución de Ventas",
+     xlab = "Fecha",
+     ylab = "Ventas",
+     col = "blue")
+```
+
+## 6. Modelos de regresión
+
+```{r}
+modelo1 <- lm(Weekly_Sales ~ Temperature, data = df_final)
+summary(modelo1)
+```
+
+```{r}
+modelo2 <- lm(Weekly_Sales ~ Temperature + Fuel_Price + CPI + Unemployment + Total_MarkDown, data = df_final)
+summary(modelo2)
+```
+
+```{r}
+plot(modelo2$fitted.values, modelo2$residuals,
+     main = "Residuos",
+     xlab = "Valores Ajustados",
+     ylab = "Residuos",
+     pch = 16,
+     col = "blue")
+abline(h = 0, col = "red", lwd = 2)
+```
+
+## 7. Análisis temporal
+
+```{r}
+ventas_anuales <- df_final %>%
+  group_by(Year) %>%
+  summarise(Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE))
+
+ventas_anuales
+```
+
+```{r}
+barplot(ventas_anuales$Ventas_Promedio,
+        names.arg = ventas_anuales$Year,
+        main = "Ventas por Año",
+        xlab = "Año",
+        ylab = "Ventas",
+        col = "steelblue")
+```
+
+```{r}
+comparacion_festivos <- df_final %>%
+  group_by(IsHoliday) %>%
+  summarise(
+    Ventas_Promedio = mean(Weekly_Sales, na.rm = TRUE),
+    Numero_Observaciones = n()
+  )
+
+comparacion_festivos
+```
+
+```{r}
+barplot(comparacion_festivos$Ventas_Promedio,
+        names.arg = c("Días Normales", "Días Festivos"),
+        main = "Ventas: Festivos vs Normales",
+        ylab = "Ventas",
+        col = c("lightblue", "lightcoral"))
+```
+
+## 8. Conclusiones
+
+```{r}
+cat("Ventas promedio:", round(mean(df_final$Weekly_Sales, na.rm = TRUE), 2), "\n")
+cat("Correlación temperatura:", round(cor(df_final$Weekly_Sales, df_final$Temperature, use = "complete.obs"), 3), "\n")
+cat("Incremento festivos:", round(incremento, 1), "%\n")
+cat("Tiendas analizadas:", n_distinct(df_final$Store), "\n")
+```
+
+**Hallazgos principales:**
+
+1. Las promociones tienen efecto positivo en las ventas
+2. La temperatura influye en el comportamiento de compra
+3. Hay diferencias significativas por tipo de tienda
+4. Los días festivos afectan las ventas
+
+**Recomendaciones:**
+
+- Ajustar inventario según estación del año
+- Aprovechar días festivos para promociones
+- Considerar tipo de tienda en metas de ventas
+- Monitorear indicadores económicos
+
+**Limitaciones:**
+
+- Algunos datos de promociones faltantes
+- Período limitado de análisis
+- No se consideraron variables externas
